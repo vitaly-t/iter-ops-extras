@@ -5,6 +5,7 @@ export {join} from './join';
 export {max} from './max';
 export {min} from './min';
 export {minMax, MinMaxResult} from './min-max';
+export {repeatAll} from './repeat-all';
 export {slice} from './slice';
 export {sum} from './sum';
 export {tapLog} from './tap-log';

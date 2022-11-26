@@ -17,6 +17,7 @@
 * [max](./src/max.ts) - emits maximum value, with optional key selector.
 * [min](./src/min.ts) - emits minimum value, with optional key selector.
 * [minMax](./src/min-max.ts) - emits `{min, max}` in one iteration, with optional key selector.
+* [repeatAll](./src/repeat-all.ts) - repeats the entire iterable N times.
 * [slice](./src/slice.ts) - implements Array->slice logic (for positive start/end only).
 * [sum](./src/sum.ts) - sums up values, with optional key selector.
 * [tapLog](./src/tap-log.ts) - logs values into the console.
