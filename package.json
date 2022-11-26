@@ -1,10 +1,10 @@
 {
   "name": "iter-ops-custom",
   "version": "1.0.0",
-  "description": "Collection of custom operators for \"iter-ops\", made from existing operators,\r as implementation examples + ideas (these are not part of the library).",
+  "description": "Collection of custom operators for iter-ops library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tsc"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/vitaly-t/iter-ops-custom#readme",
   "dependencies": {
     "iter-ops": "latest"
+  },
+  "devDependencies": {
+    "typescript": "4.9.3"
   }
 }
