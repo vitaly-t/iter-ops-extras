@@ -11,6 +11,7 @@
 ---
 
 * [average](./src/average.ts) - emits an average value, with optional key selector.
+* [distinctUntilChanged](./src/distinct-until-changed.ts) - filters out repeated values.
 * [groupBy](./src/group-by.ts) - groups objects by a property value.
 * [join](./src/join.ts) - joins strings, with optional separator.
 * [max](./src/max.ts) - emits maximum value, with optional key selector.

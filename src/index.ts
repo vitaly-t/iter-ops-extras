@@ -1,4 +1,5 @@
 export * from './average';
+export * from './distinct-until-changed';
 export * from './group-by';
 export * from './join';
 export * from './max';
