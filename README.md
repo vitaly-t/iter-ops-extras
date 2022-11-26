@@ -2,7 +2,7 @@
 
 Collection of custom operators for [iter-ops] - ones based on existing operators.
 
-It is here to show implementation examples, plus share ideas for useful operators.
+It is here to show implementation examples, plus share ideas of useful operations.
 
 These are just quick copy-n-paste snippets, they are not distributed anywhere.
 
