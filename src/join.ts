@@ -1,10 +1,8 @@
-import {Operation, tap} from 'iter-ops';
+import {aggregate, Operation} from 'iter-ops';
 
 /**
- * Logs values into the console.
+ * Joins strings, with optional separator.
  */
-export function log<T>(): Operation<T, T> {
-    return tap((value) => {
-        console.log(value);
-    });
+export function join<T>(separator?: string): Operation<T, string> {
+    return aggregate(a => a.join(separator));
 }
