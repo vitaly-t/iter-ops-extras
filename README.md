@@ -29,7 +29,8 @@
 ---
 
 Some of these operators may eventually land in the main [iter-ops] library.
-Use [Discussions], if you want to propose and vote on such additions. 
+Use [Discussions], if you want to propose and vote on such additions. In the meantime, if you want to use these,
+create `extras` folder in your project, copy the entire [./src](./src) content over.
 
 See also [Custom Operators](https://github.com/vitaly-t/iter-ops/wiki/Custom-Operators) - explains API for custom operators. 
 
