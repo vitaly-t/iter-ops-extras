@@ -18,6 +18,7 @@
 * [max](./src/max.ts) - emits maximum value, with optional key selector.
 * [min](./src/min.ts) - emits minimum value, with optional key selector.
 * [minMax](./src/min-max.ts) - emits `{min, max}` in one iteration, with optional key selector.
+* [pluck](./src/pluck.ts) - maps each value to its specified nested property.
 * [repeatAll](./src/repeat-all.ts) - repeats the entire iterable N times.
 * [replaceNil](./src/replace-nil.ts) - replaces every `null` and `undefined` with an alternative value.
 * [slice](./src/slice.ts) - implements Array->slice logic (for positive start/end only).

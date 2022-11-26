@@ -6,6 +6,7 @@ export {join} from './join';
 export {max} from './max';
 export {min} from './min';
 export {minMax, MinMaxResult} from './min-max';
+export {pluck} from './pluck';
 export {repeatAll} from './repeat-all';
 export {replaceNil} from './replace-nil';
 export {slice} from './slice';
