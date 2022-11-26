@@ -13,12 +13,12 @@
 * [average](./src/average.ts) - emits an average value, with optional key selector.
 * [groupBy](./src/group-by.ts) - groups objects by a property value.
 * [join](./src/join.ts) - joins strings, with optional separator.
-* [log](./src/log.ts) - logs values into the console.
 * [max](./src/max.ts) - emits maximum value, with optional key selector.
 * [min](./src/min.ts) - emits minimum value, with optional key selector.
 * [minMax](./src/min-max.ts) - emits `{min, max}` in one iteration, with optional key selector.
 * [slice](./src/slice.ts) - implements Array->slice logic (for positive start/end only).
 * [sum](./src/sum.ts) - sums up values, with optional key selector.
+* [tapLog](./src/tap-log.ts) - logs values into the console.
 * [tapOnce](./src/tap-once.ts) - taps into the very first value only.
 * [uniqueValues](./src/unique-values.ts) - selects unique key-values, then remaps them into just values.
 
