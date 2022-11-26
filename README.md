@@ -10,7 +10,7 @@
 
 ---
 
-* [average](./src/average.ts) - Emits an average value.
+* [average](./src/average.ts) - Emits an average value, with optional key selector.
 * [groupBy](./src/group-by.ts) - Groups objects by a property value.
 * [join](./src/join.ts) - Joins strings, with optional separator.
 * [log](./src/log.ts) - Logs values into the console.
