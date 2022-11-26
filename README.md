@@ -1,4 +1,4 @@
-# iter-ops-custom
+# iter-ops-extras
 
 :star: Collection of custom operators for [iter-ops] - ones based on existing operators.
 

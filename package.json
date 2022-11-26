@@ -1,5 +1,5 @@
 {
-  "name": "iter-ops-custom",
+  "name": "iter-ops-extras",
   "version": "1.0.0",
   "description": "Collection of custom operators for iter-ops library",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vitaly-t/iter-ops-custom.git"
+    "url": "git+https://github.com/vitaly-t/iter-ops-extras.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vitaly-t/iter-ops-custom/issues"
+    "url": "https://github.com/vitaly-t/iter-ops-extras/issues"
   },
-  "homepage": "https://github.com/vitaly-t/iter-ops-custom#readme",
+  "homepage": "https://github.com/vitaly-t/iter-ops-extras#readme",
   "dependencies": {
     "iter-ops": "latest"
   },
