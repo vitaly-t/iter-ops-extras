@@ -26,6 +26,9 @@
 
 ---
 
+Some of these operators may eventually land in the main library. Use [Discussions] to propose and vote on such additions. 
+
 See also [Custom Operators](https://github.com/vitaly-t/iter-ops/wiki/Custom-Operators) - explains API for custom operators. 
 
+[Discussions]:https://github.com/vitaly-t/iter-ops-extras/discussions
 [iter-ops]:https://github.com/vitaly-t/iter-ops
