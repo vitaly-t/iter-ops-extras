@@ -34,7 +34,7 @@ export function pluck<T>(...properties: string[]): Operation<T, unknown>;
 /**
  * Maps each value to its specified nested property.
  */
-export function pluck<T, R>(...props: (string | number | symbol)[]): Operation<T, R> {
+export function pluck<T>(...props: string[]): Operation<T, T> {
     return map(a => {
         if (!props.length) {
             throw new TypeError('List of properties cannot be empty.');
