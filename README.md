@@ -23,6 +23,6 @@ Feel free submitting PR-s with your own custom operators, to share with others.
 
 ---
 
-See also [Custom Operator](https://github.com/vitaly-t/iter-ops/wiki/Custom-Operators) - explains API for custom operators. 
+See also [Custom Operators](https://github.com/vitaly-t/iter-ops/wiki/Custom-Operators) - explains API for custom operators. 
 
 [iter-ops]:https://github.com/vitaly-t/iter-ops
