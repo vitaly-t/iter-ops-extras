@@ -1,11 +1,13 @@
 export {average} from './average';
 export {distinctUntilChanged} from './distinct-until-changed';
+export {filterNil} from './filter-nil';
 export {groupBy, GroupByResult} from './group-by';
 export {join} from './join';
 export {max} from './max';
 export {min} from './min';
 export {minMax, MinMaxResult} from './min-max';
 export {repeatAll} from './repeat-all';
+export {replaceNil} from './replace-nil';
 export {slice} from './slice';
 export {sum} from './sum';
 export {tapLog} from './tap-log';
