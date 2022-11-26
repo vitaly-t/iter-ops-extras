@@ -21,4 +21,8 @@ Feel free submitting PR-s with your own custom operators, to share with others.
 * [sum](./src/sum.ts) - Sums up values, with optional key selector.
 * [uniqueValues](./src/unique-values.ts) - Selects unique key-values, then remaps them into just values.
 
+---
+
+See also [Custom Operator](https://github.com/vitaly-t/iter-ops/wiki/Custom-Operators) - explains API for custom operators. 
+
 [iter-ops]:https://github.com/vitaly-t/iter-ops
