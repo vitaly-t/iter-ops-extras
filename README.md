@@ -19,6 +19,7 @@
 * [minMax](./src/min-max.ts) - emits `{min, max}` in one iteration, with optional key selector.
 * [slice](./src/slice.ts) - implements Array->slice logic (for positive start/end only).
 * [sum](./src/sum.ts) - sums up values, with optional key selector.
+* [tapOnce](./src/tap-once.ts) - taps into the very first value only.
 * [uniqueValues](./src/unique-values.ts) - selects unique key-values, then remaps them into just values.
 
 ---

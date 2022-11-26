@@ -7,4 +7,5 @@ export * from './min';
 export * from './min-max';
 export * from './slice';
 export * from './sum';
+export * from './tap-once';
 export * from './unique-values';
