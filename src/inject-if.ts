@@ -4,21 +4,21 @@ import {IterationState, Operation, SyncValue, UnknownIterable, map, spread} from
  * Conditionally injects value(s) after current value.
  */
 export function appendIf<T, R>(value: SyncValue<R>, predicate: (value: T, index: number, state: IterationState) => boolean): Operation<T, T | R> {
-    return injectIf(predicate, current => [current, ...safeIterable<R>(value)]);
+    return injectIf(predicate, current => [current, ...safeIterable(value)]);
 }
 
 /**
  * Conditionally injects value(s) before current value.
  */
 export function prependIf<T, R>(value: SyncValue<R>, predicate: (value: T, index: number, state: IterationState) => boolean): Operation<T, T | R> {
-    return injectIf(predicate, current => [...safeIterable<R>(value), current]);
+    return injectIf(predicate, current => [...safeIterable(value), current]);
 }
 
 /**
  * Conditionally injects value(s) in place of the current value.
  */
 export function replaceIf<T, R>(value: SyncValue<R>, predicate: (value: T, index: number, state: IterationState) => boolean): Operation<T, T | R> {
-    return injectIf(predicate, () => safeIterable<R>(value));
+    return injectIf(predicate, () => safeIterable(value));
 }
 
 /**
