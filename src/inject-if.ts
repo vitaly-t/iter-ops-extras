@@ -35,5 +35,5 @@ function injectIf<T>(predicate: (value: T, index: number, state: IterationState)
  * Makes value a safe iterable.
  */
 function safeIterable<T>(value: SyncValue<T>): Iterable<T> {
-    return (value && (typeof value as any)[Symbol.iterator] === 'function' ? value : [value]) as Iterable<T>;
+    return (value && typeof (value as any)[Symbol.iterator] === 'function' ? value : [value]) as Iterable<T>;
 }
