@@ -13,6 +13,7 @@
 * [appendIf](./src/inject-if.ts) - conditionally injects value(s) after current value.
 * [average](./src/average.ts) - emits an average value, with optional key selector.
 * [distinctUntilChanged](./src/distinct-until-changed.ts) - filters out repeated values.
+* [distinctValues](./src/distinct-values.ts) - selects unique key-values, then remaps them into just values.
 * [filterNil](./src/filter-nil.ts) - filters out all `null` and `undefined` values.
 * [groupBy](./src/group-by.ts) - groups objects by a property value.
 * [join](./src/join.ts) - joins strings, with optional separator.
@@ -28,7 +29,6 @@
 * [sum](./src/sum.ts) - sums up values, with optional key selector.
 * [tapLog](./src/tap-log.ts) - logs values into the console.
 * [tapOnce](./src/tap-once.ts) - taps into the very first value only.
-* [uniqueValues](./src/unique-values.ts) - selects unique key-values, then remaps them into just values.
 
 ---
 
