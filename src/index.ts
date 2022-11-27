@@ -1,3 +1,4 @@
+export {appendIf, prependIf, replaceIf} from './inject-if';
 export {average} from './average';
 export {distinctUntilChanged} from './distinct-until-changed';
 export {filterNil} from './filter-nil';
