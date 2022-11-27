@@ -3,6 +3,8 @@ import {Operation, repeat, spread, toArray} from 'iter-ops';
 /**
  * Repeats the entire iterable N times.
  *
+ * See also operator "repeat" - https://vitaly-t.github.io/iter-ops/functions/repeat
+ *
  * LIMITATIONS:
  *
  * Because it aggregates values, using it against very long iterators will consume too much memory,

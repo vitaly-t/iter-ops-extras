@@ -2,21 +2,28 @@
   "name": "iter-ops-extras",
   "version": "1.0.0",
   "description": "Collection of custom operators for iter-ops library",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "tsc"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vitaly-t/iter-ops-extras.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/vitaly-t/iter-ops-extras/issues"
   },
+  "author": {
+    "name": "Vitaly Tomilov",
+    "email": "vitaly.tomilov@gmail.com"
+  },
+  "license": "ISC",
   "homepage": "https://github.com/vitaly-t/iter-ops-extras#readme",
-  "dependencies": {
+  "peerDependencies": {
     "iter-ops": "latest"
   },
   "devDependencies": {
