@@ -10,5 +10,5 @@ export function sum<T, R>(keySelector?: (value: T) => R): Operation<T, R> {
     const cb = keySelector ? (p: T, c: T, idx: number) =>
         (idx > 1 ? p : keySelector(p)) as any + keySelector(c) : (p: T, c: T) => p as any + c;
 
-    return reduce(cb);
+    return reduce(cb) as Operation<T, any>;
 }

@@ -38,6 +38,6 @@ export function pluck<T, R>(...props: string[]): Operation<T, R> {
         if (!props.length) {
             throw new TypeError('List of properties cannot be empty.');
         }
-        return props.reduce((p, c) => p && p[c], a);
+        return props.reduce((p: any, c: string) => p && p[c], a);
     });
 }
