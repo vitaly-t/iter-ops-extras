@@ -10,7 +10,7 @@
 
 ---
 
-* [appendIf](./src/inject-if.ts) - conditionally injects values after current value.
+* [appendIf](./src/inject-if.ts) - conditionally injects value(s) after current value.
 * [average](./src/average.ts) - emits an average value, with optional key selector.
 * [distinctUntilChanged](./src/distinct-until-changed.ts) - filters out repeated values.
 * [filterNil](./src/filter-nil.ts) - filters out all `null` and `undefined` values.
@@ -20,9 +20,9 @@
 * [min](./src/min.ts) - emits minimum value, with optional key selector.
 * [minMax](./src/min-max.ts) - emits `{min, max}` in one iteration, with optional key selector.
 * [pluck](./src/pluck.ts) - maps each value to its specified nested property.
-* [prependIf](./src/inject-if.ts) - conditionally injects values before current value.
+* [prependIf](./src/inject-if.ts) - conditionally injects value(s) before current value.
 * [repeatAll](./src/repeat-all.ts) - repeats the entire iterable N times.
-* [replaceIf](./src/inject-if.ts) - conditionally injects values in place of the current value.
+* [replaceIf](./src/inject-if.ts) - conditionally injects value(s) in place of the current value.
 * [replaceNil](./src/replace-nil.ts) - replaces every `null` and `undefined` with an alternative value.
 * [slice](./src/slice.ts) - implements Array->slice logic (for positive start/end only).
 * [sum](./src/sum.ts) - sums up values, with optional key selector.

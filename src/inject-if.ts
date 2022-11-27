@@ -1,32 +1,39 @@
-import {IterationState, Operation, map, spread} from 'iter-ops';
+import {IterationState, Operation, SyncValue, UnknownIterable, map, spread} from 'iter-ops';
 
 /**
- * Conditionally injects values after current value.
+ * Conditionally injects value(s) after current value.
  */
-export function appendIf<T>(values: T[], predicate: (value: T, index: number, state: IterationState) => boolean): Operation<T, T> {
-    return injectIf(values, predicate, current => [current, ...values]);
+export function appendIf<T>(value: SyncValue<T>, predicate: (value: T, index: number, state: IterationState) => boolean): Operation<T, T> {
+    return injectIf(predicate, current => [current, ...safeIterable(value)]);
 }
 
 /**
- * Conditionally injects values before current value.
+ * Conditionally injects value(s) before current value.
  */
-export function prependIf<T>(values: T[], predicate: (value: T, index: number, state: IterationState) => boolean): Operation<T, T> {
-    return injectIf(values, predicate, current => [...values, current]);
+export function prependIf<T>(value: SyncValue<T>, predicate: (value: T, index: number, state: IterationState) => boolean): Operation<T, T> {
+    return injectIf(predicate, current => [...safeIterable(value), current]);
 }
 
 /**
- * Conditionally injects values in place of the current value.
+ * Conditionally injects value(s) in place of the current value.
  */
-export function replaceIf<T>(values: T[], predicate: (value: T, index: number, state: IterationState) => boolean): Operation<T, T> {
-    return injectIf(values, predicate, current => [...values]);
+export function replaceIf<T>(value: SyncValue<T>, predicate: (value: T, index: number, state: IterationState) => boolean): Operation<T, T> {
+    return injectIf(predicate, () => safeIterable(value));
 }
 
 /**
- * Conditional values-injecting helper.
+ * Conditional injector of synchronous iterables.
  */
-function injectIf<T>(values: T[], test: (value: T, index: number, state: IterationState) => boolean, cb: (current: T) => T[]): Operation<T, T> {
+function injectIf<T>(predicate: (value: T, index: number, state: IterationState) => boolean, cb: (current: T) => SyncValue<T>): Operation<T, T> {
     return i => {
-        const m = map((a: T, index: number, state: IterationState) => test(a, index, state) ? cb(a) : [a])(i);
+        const m = map((a: T, index: number, state: IterationState) => predicate(a, index, state) ? cb(a) : [a])(i) as UnknownIterable<Iterable<T>>;
         return spread()(m) as any;
     };
+}
+
+/**
+ * Makes value a safe iterable.
+ */
+function safeIterable<T>(value: SyncValue<T>): Iterable<T> {
+    return (value && (typeof value as any)[Symbol.iterator] === 'function' ? value : [value]) as Iterable<T>;
 }
