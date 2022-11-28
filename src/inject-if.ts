@@ -1,14 +1,14 @@
 import {IterationState, Operation, SyncValue, UnknownIterable, map, spread, wait} from 'iter-ops';
 
 /**
- * NOTE: This operator requires "iter-ops" v2.7.0 or later, as it relies on the following update:
- *       https://github.com/vitaly-t/iter-ops/issues/200
+ * NOTES: 1) This operator requires "iter-ops" v2.7.0 or later, as it relies on the following update:
+ *           https://github.com/vitaly-t/iter-ops/issues/200
+ *        2) If predicate returns a Promise inside a synchronous pipeline, an error will be thrown:
+ *           TypeError: Value at index 0 is not iterable: {}
  */
 
 /**
  * Conditionally injects value(s) after current value.
- *
- * NOTE: If predicate returns a Promise inside a synchronous pipeline, it will be treated as a truthy value.
  */
 export function appendIf<T, R>(value: SyncValue<R>, predicate: (value: T, index: number, state: IterationState) => boolean | Promise<boolean>): Operation<T, T | R> {
     return injectIf(predicate, current => [current, ...safeIterable(value)]);
@@ -16,8 +16,6 @@ export function appendIf<T, R>(value: SyncValue<R>, predicate: (value: T, index:
 
 /**
  * Conditionally injects value(s) before current value.
- *
- * NOTE: If predicate returns a Promise inside a synchronous pipeline, it will be treated as a truthy value.
  */
 export function prependIf<T, R>(value: SyncValue<R>, predicate: (value: T, index: number, state: IterationState) => boolean | Promise<boolean>): Operation<T, T | R> {
     return injectIf(predicate, current => [...safeIterable(value), current]);
@@ -25,8 +23,6 @@ export function prependIf<T, R>(value: SyncValue<R>, predicate: (value: T, index
 
 /**
  * Conditionally injects value(s) in place of the current value.
- *
- * NOTE: If predicate returns a Promise inside a synchronous pipeline, it will be treated as a truthy value.
  */
 export function replaceIf<T, R>(value: SyncValue<R>, predicate: (value: T, index: number, state: IterationState) => boolean | Promise<boolean>): Operation<T, T | R> {
     return injectIf(predicate, () => safeIterable(value));
@@ -44,7 +40,7 @@ function injectIf<T, R>(predicate: (value: T, index: number, state: IterationSta
             return isPromise ? r.then(out) : out(r);
         })(i) as UnknownIterable<any>;
         const w = wait()(m) as UnknownIterable<any>;
-        return spread()(w) as UnknownIterable<any>;
+        return spread()(w) as UnknownIterable<any>; // will throw, if predicate returns a Promise inside synchronous pipeline
     };
 }
 
