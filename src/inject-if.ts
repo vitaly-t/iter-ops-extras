@@ -5,14 +5,14 @@ import {IterationState, Operation, SyncValue, map, spread, wait, concurrencyFork
  */
 
 /**
- * Conditionally injects value(s) after current value.
+ * Conditionally injects value(s) after the current value.
  */
 export function appendIf<T, R>(value: SyncValue<R>, predicate: (value: T, index: number, state: IterationState) => boolean | Promise<boolean>): Operation<T, T | R> {
     return injectIf(predicate, current => [current, ...safeIterable(value)]);
 }
 
 /**
- * Conditionally injects value(s) before current value.
+ * Conditionally injects value(s) before the current value.
  */
 export function prependIf<T, R>(value: SyncValue<R>, predicate: (value: T, index: number, state: IterationState) => boolean | Promise<boolean>): Operation<T, T | R> {
     return injectIf(predicate, current => [...safeIterable(value), current]);

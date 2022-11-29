@@ -10,7 +10,7 @@
 
 ---
 
-* [appendIf](./src/inject-if.ts) - conditionally injects value(s) after current value.
+* [appendIf](./src/inject-if.ts) - conditionally injects value(s) after the current value.
 * [average](./src/average.ts) - emits an average value, with optional key selector.
 * [distinctUntilChanged](./src/distinct-until-changed.ts) - filters out repeated values.
 * [distinctValues](./src/distinct-values.ts) - selects unique key-values, then remaps them into just values.
@@ -21,7 +21,7 @@
 * [min](./src/min.ts) - emits minimum value, with optional key selector.
 * [minMax](./src/min-max.ts) - emits `{min, max}` in one iteration, with optional key selector.
 * [pluck](./src/pluck.ts) - maps each value to its specified nested property.
-* [prependIf](./src/inject-if.ts) - conditionally injects value(s) before current value.
+* [prependIf](./src/inject-if.ts) - conditionally injects value(s) before the current value.
 * [repeatAll](./src/repeat-all.ts) - repeats the entire iterable N times.
 * [replaceIf](./src/inject-if.ts) - conditionally injects value(s) in place of the current value.
 * [replaceNil](./src/replace-nil.ts) - replaces every `null` and `undefined` with an alternative value.
