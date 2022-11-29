@@ -1,8 +1,7 @@
 import {IterationState, Operation, SyncValue, map, spread, wait, concurrencyFork} from 'iter-ops';
 
 /**
- * NOTES: 1) This operator requires "iter-ops" v2.8.0 or later, as it uses operator "concurrencyFork"
- *        2) If predicate returns a Promise inside a synchronous pipeline, it will be treated as a truthy value.
+ * NOTE: This operator requires "iter-ops" v2.8.0 or later, as it uses operator "concurrencyFork"
  */
 
 /**
