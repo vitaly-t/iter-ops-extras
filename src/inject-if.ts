@@ -1,10 +1,8 @@
-import {IterationState, Operation, SyncValue, UnknownIterable, map, spread, wait} from 'iter-ops';
+import {IterationState, Operation, SyncValue, map, spread, wait, concurrencyFork} from 'iter-ops';
 
 /**
- * NOTES: 1) This operator requires "iter-ops" v2.7.0 or later, as it relies on the following update:
- *           https://github.com/vitaly-t/iter-ops/issues/200
- *        2) If predicate returns a Promise inside a synchronous pipeline, an error will be thrown:
- *           TypeError: Value at index 0 is not iterable: {}
+ * NOTES: 1) This operator requires "iter-ops" v2.8.0 or later, as it uses operator "concurrencyFork"
+ *        2) If predicate returns a Promise inside a synchronous pipeline, it will be treated as a truthy value.
  */
 
 /**
@@ -32,16 +30,22 @@ export function replaceIf<T, R>(value: SyncValue<R>, predicate: (value: T, index
  * Conditional injector of synchronous iterables, with support for asynchronous predicate result.
  */
 function injectIf<T, R>(predicate: (value: T, index: number, state: IterationState) => boolean | Promise<boolean>, cb: (current: T) => SyncValue<R>): Operation<T, T | R> {
-    return i => {
-        const m = map((a: T, index: number, state: IterationState) => {
-            const r = predicate(a, index, state) as any;
-            const isPromise = r && typeof r.then === 'function';
-            const out = (pass: boolean) => pass ? cb(a) : [a];
-            return isPromise ? r.then(out) : out(r);
-        })(i) as UnknownIterable<any>;
-        const w = wait()(m) as UnknownIterable<any>;
-        return spread()(w) as UnknownIterable<any>; // will throw, if predicate returns a Promise inside synchronous pipeline
-    };
+    return i => concurrencyFork({
+        onSync(source: Iterable<T>) {
+            const m = map((a: T, index, state) => predicate(a, index, state) ? cb(a) : [a])(source);
+            return spread()(m as Iterable<Array<T | R>>) as Iterable<T | R>;
+        },
+        onAsync(source: AsyncIterable<T>) {
+            const m = map((a: T, index, state) => {
+                const r = predicate(a, index, state) as any;
+                const isPromise = r && typeof r.then === 'function';
+                const out = (pass: boolean) => pass ? cb(a) : [a];
+                return isPromise ? r.then(out) : out(r);
+            })(source) as AsyncIterable<Array<T | R> | Promise<Array<T | R>>>;
+            const w = wait()(m) as AsyncIterable<Array<T | R>>;
+            return spread()(w) as AsyncIterable<T | R>;
+        }
+    })(i);
 }
 
 /**
