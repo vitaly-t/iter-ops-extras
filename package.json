@@ -24,7 +24,7 @@
   "license": "ISC",
   "homepage": "https://github.com/vitaly-t/iter-ops-extras#readme",
   "peerDependencies": {
-    "iter-ops": "^2.8.0"
+    "iter-ops": "^2.9.0"
   },
   "devDependencies": {
     "typescript": "4.9.3"
