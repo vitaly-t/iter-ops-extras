@@ -42,7 +42,7 @@ complete exports).
 See also [Custom Operators](https://github.com/vitaly-t/iter-ops/wiki/Custom-Operators) - explains API for custom
 operators.
 
-**Tip:** Operators [consume] and [concurrencyFork] are useful helpers for custom operators.
+:bulb: **TIP:** Operators [consume] and [concurrencyFork] are useful helpers for custom operators.
 
 [consume]:https://vitaly-t.github.io/iter-ops/functions/consume
 
