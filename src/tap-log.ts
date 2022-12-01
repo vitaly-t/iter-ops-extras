@@ -10,7 +10,7 @@ export function tapLog<T>(tag?: string): Operation<T, T> {
     let cb = (value: T) => {
         console.log(value);
     };
-    if (tag !== undefined) {
+    if (tag) {
         cb = (value: T) => {
             console.log(`${tag}:`, value);
         };
