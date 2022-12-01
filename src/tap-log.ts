@@ -7,11 +7,13 @@ import {Operation, tap} from 'iter-ops';
  *       because console's inner serialization is way better.
  */
 export function tapLog<T>(tag?: string): Operation<T, T> {
-    return tap((value) => {
-        if (tag) {
+    let cb = (value: T) => {
+        console.log(value);
+    };
+    if (tag !== undefined) {
+        cb = (value: T) => {
             console.log(`${tag}:`, value);
-        } else {
-            console.log(value);
-        }
-    });
+        };
+    }
+    return tap(cb);
 }
