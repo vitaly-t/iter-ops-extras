@@ -27,7 +27,7 @@
 * [replaceNil](./src/replace-nil.ts) - replaces every `null` and `undefined` with an alternative value.
 * [slice](./src/slice.ts) - implements Array->slice logic (for positive start/end only).
 * [sum](./src/sum.ts) - sums up values, with optional key selector.
-* [tapLog](./src/tap-log.ts) - logs values into the console.
+* [tapLog](./src/tap-log.ts) - logs values into the console, with optional tag.
 * [tapOnce](./src/tap-once.ts) - taps into the very first value only.
 
 ---
