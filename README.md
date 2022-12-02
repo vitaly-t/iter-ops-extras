@@ -29,6 +29,7 @@
 * [sum](./src/sum.ts) - sums up values, with optional key selector.
 * [tapLog](./src/tap-log.ts) - logs values into the console, with optional tag.
 * [tapOnce](./src/tap-once.ts) - taps into the very first value only.
+* [toBuffer](./src/to-buffer.ts) - converts iterable into a `Buffer`.
 
 ---
 
