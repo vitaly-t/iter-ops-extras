@@ -13,6 +13,13 @@ import {Readable} from 'stream';
  *    })
  * })
  * ```
+ *
+ * This operator uses "stream" library, which is part of NodeJS,
+ * but for web clients it needs to be installed:
+ *
+ * ```
+ * $ npm install stream
+ * ```
  */
 export function toReadable<T>(cb?: (stream: Readable) => void): Operation<T, Readable> {
     return source => consume(i => {
