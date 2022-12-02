@@ -16,4 +16,8 @@ export {sum} from './sum';
 export {tapLog} from './tap-log';
 export {tapOnce} from './tap-once';
 export {toBuffer} from './to-buffer';
-export {toReadable} from './to-readable';
+
+// Operator toReadable requires "stream" to be installed when used in web clients.
+// That's why it is by default excluded here (uncomment, if it is needed):
+
+// export {toReadable} from './to-readable';

@@ -14,8 +14,9 @@ import {Readable} from 'stream';
  * })
  * ```
  *
- * This operator uses "stream" library, which is part of NodeJS,
- * but for web clients it needs to be installed:
+ * NOTE: This operator is not included within ./index.ts by default,
+ *       because "stream" package that it uses is part of NodeJS,
+ *       but for web clients in needs to be installed:
  *
  * ```
  * $ npm install stream
