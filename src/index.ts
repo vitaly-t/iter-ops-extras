@@ -16,3 +16,4 @@ export {sum} from './sum';
 export {tapLog} from './tap-log';
 export {tapOnce} from './tap-once';
 export {toBuffer} from './to-buffer';
+export {toReadable} from './to-readable';

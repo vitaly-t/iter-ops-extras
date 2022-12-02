@@ -1,7 +1,7 @@
 import {Operation, aggregate} from 'iter-ops';
 
 /**
- * Converts iterable into a Buffer:
+ * Converts the iterable into a Buffer:
  *
  *  - from an array of numbers, when iterable contains numbers;
  *  - from a joined string, when iterable contains strings.
