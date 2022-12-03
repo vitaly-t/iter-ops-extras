@@ -15,7 +15,7 @@
 * [distinctUntilChanged](./src/distinct-until-changed.ts) - filters out repeated values.
 * [distinctValues](./src/distinct-values.ts) - selects unique key-values, then remaps into just values.
 * [filterNil](./src/filter-nil.ts) - filters out all `null` and `undefined` values.
-* [groupBy](./src/group-by.ts) - groups objects by a property value.
+* [group](./src/group.ts) - groups objects by a property value.
 * [join](./src/join.ts) - joins strings, with optional separator.
 * [mapWait](./src/map-wait.ts) - maps and sequentially awaits any promises.
 * [max](./src/max.ts) - emits maximum value, with optional key selector.
