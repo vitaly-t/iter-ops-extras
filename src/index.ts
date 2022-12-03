@@ -5,6 +5,7 @@ export {distinctUntilChanged} from './distinct-until-changed';
 export {filterNil} from './filter-nil';
 export {groupBy, GroupByResult} from './group-by';
 export {join} from './join';
+export {mapWait} from './map-wait';
 export {max} from './max';
 export {min} from './min';
 export {minMax, MinMaxResult} from './min-max';

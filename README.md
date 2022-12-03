@@ -17,6 +17,7 @@
 * [filterNil](./src/filter-nil.ts) - filters out all `null` and `undefined` values.
 * [groupBy](./src/group-by.ts) - groups objects by a property value.
 * [join](./src/join.ts) - joins strings, with optional separator.
+* [mapWait](./src/map-wait.ts) - maps and sequentially awaits any promises.
 * [max](./src/max.ts) - emits maximum value, with optional key selector.
 * [min](./src/min.ts) - emits minimum value, with optional key selector.
 * [minMax](./src/min-max.ts) - emits `{min, max}` in one iteration, with optional key selector.
