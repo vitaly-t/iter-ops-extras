@@ -2,7 +2,7 @@ import {consume, Operation} from 'iter-ops';
 import {Readable} from 'stream';
 
 /**
- * Converts the iterable into a Readable stream, with optional callback.
+ * Emits a `Readable` stream from the iterable, with optional callback.
  *
  * The optional callback is to let you set up event listeners:
  *
