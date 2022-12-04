@@ -25,7 +25,7 @@ export function replaceIf<T, R>(value: R | Iterable<R>, predicate: (value: T, in
 }
 
 /**
- * Conditional injector of synchronous iterables, with support for asynchronous predicate result.
+ * Conditional injector of synchronous values, with support for asynchronous predicate result.
  */
 function injectIf<T, R>(predicate: (value: T, index: number, state: IterationState) => boolean | Promise<boolean>, cb: (current: T) => Iterable<R>): Operation<T, T | R> {
     return source => concurrencyFork({

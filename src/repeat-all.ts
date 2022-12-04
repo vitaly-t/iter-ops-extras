@@ -7,8 +7,7 @@ import {Operation, repeat, spread, toArray} from 'iter-ops';
  *
  * LIMITATIONS:
  *
- * Because it aggregates values, using it against very long iterators will consume too much memory,
- * and using it against an infinite iterator will crash the process.
+ * Because it aggregates values, using it against a very long iterator will consume too much memory.
  *
  * A dedicated operator would be able to emit values right away, while aggregating them in parallel.
  */
