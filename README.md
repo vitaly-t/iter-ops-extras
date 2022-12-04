@@ -14,7 +14,6 @@
 * [average](./src/average.ts) - emits an average value, with optional key selector.
 * [distinctUntilChanged](./src/distinct-until-changed.ts) - filters out repeated values.
 * [distinctValues](./src/distinct-values.ts) - selects unique key-values, then remaps into just values.
-* [filterNil](./src/filter-nil.ts) - filters out all `null` and `undefined` values.
 * [group](./src/group.ts) - groups objects by a property value.
 * [join](./src/join.ts) - joins strings, with optional separator.
 * [mapWait](./src/map-wait.ts) - remaps and sequentially awaits promises.
@@ -23,6 +22,7 @@
 * [minMax](./src/min-max.ts) - emits `{min, max}` in one iteration, with optional key selector.
 * [pluck](./src/pluck.ts) - maps each value to its specified nested property.
 * [prependIf](./src/inject-if.ts) - conditionally injects value(s) before the current value.
+* [removeNil](./src/remove-nil.ts) - removes all `null` and `undefined` values.
 * [repeatAll](./src/repeat-all.ts) - repeats the entire iterable N times.
 * [replaceIf](./src/inject-if.ts) - conditionally injects value(s) in place of the current value.
 * [replaceNil](./src/replace-nil.ts) - replaces every `null` and `undefined` with an alternative value.
