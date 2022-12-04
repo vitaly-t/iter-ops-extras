@@ -1,7 +1,7 @@
 import {IterationState, Operation, concurrencyFork, map, wait} from 'iter-ops';
 
 /**
- * Maps and sequentially awaits any promises.
+ * Remaps and sequentially awaits promises.
  *
  * It adds operator "wait" only when inside asynchronous pipeline.
  *
