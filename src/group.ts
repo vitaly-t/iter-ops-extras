@@ -5,11 +5,10 @@ export type GroupResult<T> = { [key: string]: T[] };
 /**
  * Groups objects by a property value.
  *
- * It works the same as `Array.group`, but without support for non-array (`ArrayLike`) objects.
- *
- * See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/group
+ * It works the same as `Array.group`:
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/group
  */
-export function group<T extends object>(predicate: (v: T) => string): Operation<T, GroupResult<T>> {
+export function group<T>(predicate: (v: T) => string | number): Operation<T, GroupResult<T>> {
     return reduce((acc: GroupResult<T>, value: T) => {
         (acc[predicate(value)] ||= []).push(value);
         return acc;
