@@ -1,5 +1,6 @@
 export {appendIf, prependIf, replaceIf} from './inject-if';
 export {average} from './average';
+export {basicStats, BasicStatsResult} from './basic-stats';
 export {distinctValues} from './distinct-values';
 export {distinctUntilChanged} from './distinct-until-changed';
 export {group, GroupResult} from './group';
@@ -7,7 +8,6 @@ export {join} from './join';
 export {mapWait} from './map-wait';
 export {max} from './max';
 export {min} from './min';
-export {minMax, MinMaxResult} from './min-max';
 export {pluck} from './pluck';
 export {removeNil} from './remove-nil';
 export {repeatAll} from './repeat-all';

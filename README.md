@@ -12,6 +12,7 @@
 
 * [appendIf](./src/inject-if.ts) - conditionally injects value(s) after the current value.
 * [average](./src/average.ts) - emits an average value, with optional key selector.
+* [basicStats](./src/basic-stats.ts) - emits basic statistics `{min, max, avg, sum}`, with optional key selector.
 * [distinctUntilChanged](./src/distinct-until-changed.ts) - filters out repeated values.
 * [distinctValues](./src/distinct-values.ts) - selects unique key-values, then remaps into just values.
 * [group](./src/group.ts) - groups objects by a property value.
@@ -19,7 +20,6 @@
 * [mapWait](./src/map-wait.ts) - remaps and sequentially awaits promises.
 * [max](./src/max.ts) - emits maximum value, with optional key selector.
 * [min](./src/min.ts) - emits minimum value, with optional key selector.
-* [minMax](./src/min-max.ts) - emits `{min, max}` in one iteration, with optional key selector.
 * [pluck](./src/pluck.ts) - maps each value to its specified nested property.
 * [prependIf](./src/inject-if.ts) - conditionally injects value(s) before the current value.
 * [removeNil](./src/remove-nil.ts) - removes all `null` and `undefined` values.
