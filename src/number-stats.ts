@@ -1,6 +1,6 @@
 import {Operation, reduce} from 'iter-ops';
 
-export type BasicStatsResult = {
+export type NumberStatsResult = {
     min?: number, // minimum value (undefined, when count is 0)
     max?: number, // maximum value (undefined, when count is 0)
     avg?: number, // average value (undefined, when count is 0)
@@ -8,13 +8,13 @@ export type BasicStatsResult = {
     count: number // count
 };
 
-export function basicStats<T extends number>(): Operation<T, BasicStatsResult>;
-export function basicStats<T, R extends number>(keySelector: (value: T) => R): Operation<T, BasicStatsResult>;
+export function numberStats<T extends number>(): Operation<T, NumberStatsResult>;
+export function numberStats<T, R extends number>(keySelector: (value: T) => R): Operation<T, NumberStatsResult>;
 
 /**
- * Emits basic statistics `{min, max, avg, sum, count}`, with optional key selector.
+ * Emits basic number statistics `{min, max, avg, sum, count}`, with optional key selector.
  */
-export function basicStats<T, R>(keySelector?: (value: T) => R): Operation<T, BasicStatsResult> {
+export function numberStats<T, R>(keySelector?: (value: T) => R): Operation<T, NumberStatsResult> {
     return reduce((p: any, c: T) => {
         const a = keySelector ? keySelector(c) : c;
         p.count++;

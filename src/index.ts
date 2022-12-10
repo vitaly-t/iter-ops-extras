@@ -1,6 +1,6 @@
 export {appendIf, prependIf, replaceIf} from './inject-if';
 export {average} from './average';
-export {basicStats, BasicStatsResult} from './basic-stats';
+export {numberStats, NumberStatsResult} from './number-stats';
 export {distinctValues} from './distinct-values';
 export {distinctUntilChanged} from './distinct-until-changed';
 export {filterString, filterNumber, filterBoolean, filterBigInt} from './filter-type';
