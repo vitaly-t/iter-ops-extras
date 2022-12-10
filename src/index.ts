@@ -3,6 +3,7 @@ export {average} from './average';
 export {basicStats, BasicStatsResult} from './basic-stats';
 export {distinctValues} from './distinct-values';
 export {distinctUntilChanged} from './distinct-until-changed';
+export {filterString, filterNumber, filterBoolean, filterBigInt} from './filter-type';
 export {group, GroupResult} from './group';
 export {join} from './join';
 export {mapWait} from './map-wait';

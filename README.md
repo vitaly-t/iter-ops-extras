@@ -15,6 +15,7 @@
 * [basicStats](./src/basic-stats.ts) - emits basic statistics: `{min, max, avg, sum, count}`.
 * [distinctUntilChanged](./src/distinct-until-changed.ts) - filters out repeated values.
 * [distinctValues](./src/distinct-values.ts) - selects unique key-values, then remaps into just values.
+* [filter-type](./src/filter-type.ts) - helpers for strict-type removal of values.
 * [group](./src/group.ts) - groups objects by a property value.
 * [join](./src/join.ts) - joins strings, with optional separator.
 * [mapWait](./src/map-wait.ts) - remaps and sequentially awaits promises.
