@@ -1,61 +1,39 @@
 import {filter, Operation} from 'iter-ops';
 
-////////////////////////////////////////////////////////////////////
-// Helpers for removing basic-type values, with strict type casting.
-////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+// Filters out values of basic types, with type re-casting.
+///////////////////////////////////////////////////////////
+
+type PrimitiveMap = {
+    string: string;
+    number: number;
+    bigint: bigint;
+    boolean: boolean;
+    symbol: symbol;
+    undefined: undefined;
+}
+
+type PrimitivesAsStrings = keyof PrimitiveMap;
+type Primitives = PrimitiveMap[PrimitivesAsStrings];
 
 /**
- * Removes all string values.
+ * Removes elements of specified type(s), and re-casts the type.
+ *
+ * ```ts
+ * pipe([1, 2, 'three', false], removeType('string', 'boolean')) //=> Iterable<number>
+ * ```
  */
-export function removeString<T>(): Operation<T, Exclude<T, string>> {
-    return filter<any>(a => typeof a !== 'string');
+export function removeType<T extends Primitives, R extends PrimitivesAsStrings>(...t: R[]): Operation<T, Exclude<T, PrimitiveMap[R]>> {
+    return filter(a => t.indexOf(typeof a as any) < 0) as any;
 }
 
 /**
- * Removes all non-string values.
+ * Removes elements that are not of specified type(s), and re-casts the type.
+ *
+ * ```ts
+ * pipe([1, 2, 'three', false], removeNotType('number', 'boolean')) //=> Iterable<number|boolean>
+ * ```
  */
-export function removeNotString<T>(): Operation<T, string> {
-    return filter<any>(a => typeof a === 'string');
-}
-
-/**
- * Removes all number values.
- */
-export function removeNumber<T>(): Operation<T, Exclude<T, number>> {
-    return filter<any>(a => typeof a !== 'number');
-}
-
-/**
- * Removes all non-number values.
- */
-export function removeNotNumber<T>(): Operation<T, number> {
-    return filter<any>(a => typeof a === 'number');
-}
-
-/**
- * Removes all boolean values.
- */
-export function removeBoolean<T>(): Operation<T, Exclude<T, boolean>> {
-    return filter<any>(a => typeof a !== 'boolean');
-}
-
-/**
- * Removes all non-boolean values.
- */
-export function removeNotBoolean<T>(): Operation<T, boolean> {
-    return filter<any>(a => typeof a === 'boolean');
-}
-
-/**
- * Removes all bigint values.
- */
-export function removeBigInt<T>(): Operation<T, Exclude<T, bigint>> {
-    return filter<any>(a => typeof a !== 'bigint');
-}
-
-/**
- * Removes all non-bigint values.
- */
-export function removeNotBigInt<T>(): Operation<T, bigint> {
-    return filter<any>(a => typeof a === 'bigint');
+export function removeNotType<T extends Primitives, R extends PrimitivesAsStrings>(...t: R[]): Operation<T, PrimitiveMap[R]> {
+    return filter(a => t.indexOf(typeof a as any) >= 0) as any;
 }
