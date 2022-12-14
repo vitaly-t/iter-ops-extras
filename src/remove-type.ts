@@ -14,7 +14,7 @@ type PrimitivesAsStrings = keyof PrimitiveMap;
 type Primitives = PrimitiveMap[PrimitivesAsStrings];
 
 /**
- * Removes elements of specified type(s), and re-casts the type:
+ * Removes values of specified basic type(s), with recasting:
  *
  * pipe([1, 2, 'three', false], removeType('string', 'boolean')) //=> Iterable<number>
  */
@@ -26,7 +26,7 @@ export function removeType(...t: string[]): any {
 }
 
 /**
- * Removes elements that are not of specified type(s), and re-casts the type:
+ * Removes values that are not of specified type(s), with recasting:
  *
  * pipe([1, 2, 'three', false], removeNotType('number', 'boolean')) //=> Iterable<number|boolean>
  */

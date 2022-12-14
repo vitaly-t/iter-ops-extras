@@ -22,7 +22,7 @@
 * [numberStats](./src/number-stats.ts) - emits basic number statistics: `{min, max, avg, sum, count}`.
 * [pluck](./src/pluck.ts) - maps each value to its specified nested property.
 * [prependIf](./src/inject-if.ts) - conditionally injects value(s) before the current value.
-* [remove-type](./src/remove-type.ts) - helpers for strict-type removal of values.
+* [removeType](./src/remove-type.ts) - removes values of specific basic type(s).
 * [removeNil](./src/remove-nil.ts) - removes all `null` and `undefined` values.
 * [repeatAll](./src/repeat-all.ts) - repeats the entire iterable N times.
 * [replaceIf](./src/inject-if.ts) - conditionally injects value(s) in place of the current value.
