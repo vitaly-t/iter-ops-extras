@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "types": "src/index.d.ts",
   "scripts": {
-    "test": "tsc -p ./src/tsconfig.json"
+    "test": "tsc"
   },
   "repository": {
     "type": "git",
