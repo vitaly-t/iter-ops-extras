@@ -38,7 +38,7 @@
 ---
 
 To use these, create a folder in your project, and copy over either select operators or the entire [./src](./src)
-content (it has [index.ts](./src/index.ts) with complete exports).
+content.
 
 Some of these operators may eventually land in the main [iter-ops] library.
 Use [Discussions], if you want to propose and vote on such additions.
