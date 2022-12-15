@@ -13,7 +13,7 @@ type PrimitiveMap = {
 type PrimitivesAsStrings = keyof PrimitiveMap;
 type Primitives = PrimitiveMap[PrimitivesAsStrings];
 
-export function removeType<T>(): Operation<T, unknown>;
+export function removeType<T>(): Operation<T, T>;
 
 /**
  * Removes values of specified basic type(s), with recasting:
@@ -26,7 +26,7 @@ export function removeType(...t: string[]): any {
     return filter(a => t.indexOf(typeof a) < 0);
 }
 
-export function removeNotType<T>(): Operation<T, unknown>;
+export function removeNotType<T>(): Operation<T, never>;
 
 /**
  * Removes values that are not of specified type(s), with recasting:
