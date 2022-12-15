@@ -1,18 +1,3 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "ES2020",
-    "strict": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "declaration": true,
-    "declarationDir": "./dist",
-    "outDir": "./dist"
-  },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "extends": "./src/tsconfig.json"
 }
