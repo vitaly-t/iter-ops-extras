@@ -12,11 +12,11 @@ export function numberStats(): Operation<number, NumberStatsResult<number>>;
 export function numberStats<T>(keySelector: (value: T) => number): Operation<T, NumberStatsResult<number>>;
 
 /**
- * Emits basic number statistics `{min, max, avg, sum, count}`, with optional key selector.
+ * Emits basic `number` statistics `{min, max, avg, sum, count}`, with optional key selector.
  */
-export function numberStats<T>(keySelector?: (value: T) => number): Operation<T, NumberStatsResult<number>> {
-    return reduce((p: any, c: T) => {
-        const a = keySelector ? keySelector(c) : c;
+export function numberStats<T>(keySelector?: (value: T) => number): Operation<number, NumberStatsResult<number>> {
+    return reduce((p: any, c: number) => {
+        const a = keySelector ? keySelector(c as T) : c;
         p.count++;
         p.sum = (p.sum ?? 0) + a;
         p.avg = p.sum / p.count;
@@ -26,15 +26,15 @@ export function numberStats<T>(keySelector?: (value: T) => number): Operation<T,
     }, {min: undefined, max: undefined, avg: undefined, sum: undefined, count: 0});
 }
 
-export function bigNumberStats(): Operation<bigint, NumberStatsResult<bigint>>;
-export function bigNumberStats<T>(keySelector: (value: T) => bigint): Operation<T, NumberStatsResult<bigint>>;
+export function bigIntStats(): Operation<bigint, NumberStatsResult<bigint>>;
+export function bigIntStats<T>(keySelector: (value: T) => bigint): Operation<T, NumberStatsResult<bigint>>;
 
 /**
- * Emits basic number statistics `{min, max, avg, sum, count}`, with optional key selector.
+ * Emits basic `bigint` statistics `{min, max, avg, sum, count}`, with optional key selector.
  */
-export function bigNumberStats<T>(keySelector?: (value: T) => bigint): Operation<T, NumberStatsResult<bigint>> {
-    return reduce((p: any, c: T) => {
-        const a = keySelector ? keySelector(c) : c;
+export function bigIntStats<T>(keySelector?: (value: T) => bigint): Operation<bigint, NumberStatsResult<bigint>> {
+    return reduce((p: any, c: bigint) => {
+        const a = keySelector ? keySelector(c as T) : c;
         p.count++;
         p.sum = (p.sum ?? 0n) + a;
         p.avg = p.sum / p.count;
