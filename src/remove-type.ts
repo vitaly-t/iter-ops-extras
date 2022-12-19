@@ -1,5 +1,8 @@
 import {filter, Operation} from 'iter-ops';
 
+/**
+ * All primitive types that exist in JavaScript.
+ */
 type PrimitiveMap = {
     string: string;
     number: number;
@@ -16,7 +19,7 @@ type Primitives = PrimitiveMap[PrimitivesAsStrings];
 export function removeType<T>(): Operation<T, T>;
 
 /**
- * Removes values of specified basic type(s), with recasting:
+ * Removes values of specified primitive type(s), with recasting:
  *
  * pipe([1, 2, 'three', false], removeType('string', 'boolean')) //=> Iterable<number>
  */
@@ -29,7 +32,7 @@ export function removeType(...t: string[]): any {
 export function removeNotType<T>(): Operation<T, never>;
 
 /**
- * Removes values that are not of specified type(s), with recasting:
+ * Removes values that are not of specified primitive type(s), with recasting:
  *
  * pipe([1, 2, 'three', false], removeNotType('number', 'boolean')) //=> Iterable<number | boolean>
  */
