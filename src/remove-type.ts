@@ -4,13 +4,13 @@ import {filter, Operation} from 'iter-ops';
  * All primitive types that exist in JavaScript.
  */
 type PrimitiveMap = {
-    null: null;
-    string: string;
-    number: number;
     bigint: bigint;
     boolean: boolean;
-    symbol: symbol;
+    null: null;
+    number: number;
     object: object;
+    string: string;
+    symbol: symbol;
     undefined: undefined;
 }
 
@@ -27,8 +27,8 @@ export function removeType<T>(): Operation<T, T>;
 export function removeType<T extends Primitives, R extends PrimitivesAsStrings>(...t: R[]): Operation<T, Exclude<T, PrimitiveMap[R]>>;
 
 export function removeType(...t: string[]): any {
-    const hasNull = t.indexOf('null') >= 0;
-    return filter(a => t.indexOf(typeof a) < 0 && (a !== null || !hasNull));
+    const hasNull = t.includes('null');
+    return filter(a => !t.includes(typeof a) && (a !== null || !hasNull));
 }
 
 export function removeNotType<T>(): Operation<T, never>;
@@ -41,6 +41,6 @@ export function removeNotType<T>(): Operation<T, never>;
 export function removeNotType<T extends Primitives, R extends PrimitivesAsStrings>(...t: R[]): Operation<T, PrimitiveMap[R]>;
 
 export function removeNotType(...t: string[]): any {
-    const hasNull = t.indexOf('null') >= 0;
-    return filter(a => t.indexOf(typeof a) >= 0 || (a === null && hasNull));
+    const hasNull = t.includes('null');
+    return filter(a => t.includes(typeof a) || (a === null && hasNull));
 }
