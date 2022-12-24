@@ -23,6 +23,8 @@ export function removeType<T>(): Operation<T, T>;
  * Removes values of specified primitive type(s), with recasting:
  *
  * pipe([1, 2, 'three', false], removeType('string', 'boolean')) //=> Iterable<number>
+ *
+ * Calling removeType('null', 'undefined') can be replaced with removeNil()
  */
 export function removeType<T extends Primitives, R extends PrimitivesAsStrings>(...t: R[]): Operation<T, Exclude<T, PrimitiveMap[R]>>;
 
