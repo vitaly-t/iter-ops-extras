@@ -29,8 +29,7 @@ export function removeType<T>(): Operation<T, T>;
 export function removeType<T extends Primitives, R extends PrimitivesAsStrings>(...t: R[]): Operation<T, Exclude<T, PrimitiveMap[R]>>;
 
 export function removeType(...t: string[]): any {
-    const hasNull = t.includes('null');
-    return filter(a => !t.includes(typeof a) && (a !== null || !hasNull));
+    return filter(a => !t.includes(typeOf(a)));
 }
 
 export function removeNotType<T>(): Operation<T, never>;
@@ -43,6 +42,12 @@ export function removeNotType<T>(): Operation<T, never>;
 export function removeNotType<T extends Primitives, R extends PrimitivesAsStrings>(...t: R[]): Operation<T, PrimitiveMap[R]>;
 
 export function removeNotType(...t: string[]): any {
-    const hasNull = t.includes('null');
-    return filter(a => t.includes(typeof a) || (a === null && hasNull));
+    return filter(a => t.includes(typeOf(a)));
+}
+
+/**
+ * Returns typeof value, while for `null` it returns "null".
+ */
+function typeOf(a: any): string {
+    return a === null ? 'null' : typeof a;
 }
