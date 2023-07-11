@@ -8,7 +8,7 @@ export function average<T, R>(keySelector: (value: T) => R): Operation<T, R>;
  */
 export function average<T, R>(keySelector?: (value: T) => R): Operation<T, T | R> {
     let cb;
-    if (keySelector) {
+    if (typeof keySelector === 'function') {
         cb = (p: any, c: T, idx: number, state: IterationState) => {
             const a = idx > 1 ? p : keySelector(p);
             state['sum'] = (state['sum'] ?? a) + keySelector(c);

@@ -15,8 +15,9 @@ export function numberStats<T>(keySelector: (value: T) => number): Operation<T, 
  * Emits basic `number` statistics `{min, max, avg, sum, count}`, with optional key selector.
  */
 export function numberStats<T>(keySelector?: (value: T) => number): Operation<number, NumberStatsResult<number>> {
+    const hasSelector = typeof keySelector === 'function';
     return reduce((p: any, c: number) => {
-        const a = keySelector ? keySelector(c as T) : c;
+        const a = hasSelector ? keySelector(c as T) : c;
         p.count++;
         p.sum = (p.sum ?? 0) + a;
         p.avg = p.sum / p.count;
@@ -33,8 +34,9 @@ export function bigIntStats<T>(keySelector: (value: T) => bigint): Operation<T, 
  * Emits basic `bigint` statistics `{min, max, avg, sum, count}`, with optional key selector.
  */
 export function bigIntStats<T>(keySelector?: (value: T) => bigint): Operation<bigint, NumberStatsResult<bigint>> {
+    const hasSelector = typeof keySelector === 'function';
     return reduce((p: any, c: bigint) => {
-        const a = keySelector ? keySelector(c as T) : c;
+        const a = hasSelector ? keySelector(c as T) : c;
         p.count++;
         p.sum = (p.sum ?? 0n) + a;
         p.avg = p.sum / p.count;
