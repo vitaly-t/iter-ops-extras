@@ -1,7 +1,8 @@
 import {filter, Operation} from 'iter-ops';
 
 /**
- * All primitive types that exist in JavaScript.
+ * All primitive types that exist in JavaScript,
+ * plus synthetic support for `null` as type.
  */
 type PrimitiveMap = {
     bigint: bigint;
@@ -46,7 +47,7 @@ export function removeNotType(...t: string[]): any {
 }
 
 /**
- * Returns typeof value, while for `null` it returns "null".
+ * Returns `typeof` for value, while for `null` it returns "null".
  */
 function typeOf(a: any): string {
     return a === null ? 'null' : typeof a;
