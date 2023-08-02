@@ -5,6 +5,8 @@ export function min<T, R>(keySelector?: (value: T) => R): Operation<T, R>;
 
 /**
  * Emits minimum value, with optional key selector.
+ *
+ * See also - operator `numberStats`, as alternative.
  */
 export function min<T, R>(keySelector?: (value: T) => R): Operation<T, T | R> {
     const hasSelector = typeof keySelector === 'function';

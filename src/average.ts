@@ -5,6 +5,8 @@ export function average<T, R>(keySelector: (value: T) => R): Operation<T, R>;
 
 /**
  * Emits an average value, with optional key selector.
+ *
+ * See also - operator `numberStats`, as alternative.
  */
 export function average<T, R>(keySelector?: (value: T) => R): Operation<T, T | R> {
     let cb;

@@ -1,7 +1,7 @@
 import {distinct, map, Operation} from 'iter-ops';
 
 /**
- * Selects unique key-values, then remaps into just values.
+ * Selects unique key-values, then remaps into just values, using the same key.
  */
 export function distinctValues<T, R>(keySelector: (value: T, index: number) => R): Operation<T, R> {
     return i => {

@@ -1,5 +1,10 @@
 import {Operation, reduce} from 'iter-ops';
 
+/**
+ * Gets all basic number statistics, in a single iteration,
+ * for either `number` or `bigint` iterables.
+ */
+
 export type NumberStatsResult<T> = {
     min?: T, // minimum value (undefined, when count is 0)
     max?: T, // maximum value (undefined, when count is 0)
