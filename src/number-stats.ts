@@ -1,8 +1,9 @@
 import {Operation, reduce} from 'iter-ops';
 
 /**
- * Gets all basic number statistics, in a single iteration,
- * for either `number` or `bigint` iterables.
+ * Gets all basic number statistics, in a single iteration:
+ * - `numberStats` for `number` iterables;
+ * - `bigIntStats` for `bigint` iterables.
  */
 
 export type NumberStatsResult<T> = {
