@@ -1,4 +1,4 @@
-import {flat as _flat, Operation, map, IterationState, UnknownIterable} from 'iter-ops';
+import {flat as _flat, map, IterationState} from 'iter-ops';
 
 /**
  * Replacement for the default `flat` and `flatMap` with ones that replicate `Array.flat`
@@ -8,12 +8,12 @@ import {flat as _flat, Operation, map, IterationState, UnknownIterable} from 'it
  * makes strings non-expandable.
  */
 
-export function flat<T>(depth = 1): Operation<T, T> {
+export function flat<T>(depth = 1) {
     return _flat(depth, v => typeof v === 'string');
 }
 
-export function flatMap<T, R>(cb: (value: T, index: number, state: IterationState) => R | Promise<R>): Operation<T, R extends UnknownIterable<infer E> ? E : R> {
-    return i => {
+export function flatMap<T, R>(cb: (value: T, index: number, state: IterationState) => R | Promise<R>) {
+    return (i: Iterable<T> | AsyncIterable<T>) => {
         const m = map(cb)(i);
         return _flat(1, v => typeof v === 'string')(m);
     }
