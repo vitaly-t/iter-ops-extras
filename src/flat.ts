@@ -15,6 +15,6 @@ export function flat<T>(depth = 1) {
 export function flatMap<T, R>(cb: (value: T, index: number, state: IterationState) => R | Promise<R>) {
     return (i: Iterable<T> | AsyncIterable<T>) => {
         const m = map(cb)(i);
-        return _flat(1, v => typeof v === 'string')(m);
+        return flat()(m);
     }
 }
