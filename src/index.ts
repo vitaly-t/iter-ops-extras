@@ -1,4 +1,5 @@
 export * from './average';
+export * from './flat';
 export * from './distinct-values';
 export * from './distinct-until-changed';
 export * from './group';

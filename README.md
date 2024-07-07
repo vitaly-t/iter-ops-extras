@@ -14,6 +14,7 @@
 * [average](./src/average.ts) - emits an average value, with optional key selector.
 * [distinctUntilChanged](./src/distinct-until-changed.ts) - filters out repeated values.
 * [distinctValues](./src/distinct-values.ts) - selects unique key-values, then remaps into just values.
+* [flat/flatMap](./src/flat.ts) - replacement for default ones, to replicate Array's methods.
 * [group](./src/group.ts) - groups objects by a property value.
 * [join](./src/join.ts) - joins strings, with optional separator.
 * [mapWait](./src/map-wait.ts) - remaps and sequentially awaits promises.
