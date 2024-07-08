@@ -4,8 +4,8 @@ import {flat as _flat, map, IterationState} from 'iter-ops';
  * Replacement for the default `flat` and `flatMap` with ones that replicate `Array.flat`
  * and `Array.flatMap` precisely, in case such behaviour is preferred.
  *
- * The library's own implementation expands all iterables, including strings. This implementation
- * makes strings non-expandable.
+ * The library's own implementation, from v3.2.0, expands all iterables, including strings.
+ * This implementation simply makes strings non-expandable.
  */
 
 export function flat<T>(depth = 1) {
