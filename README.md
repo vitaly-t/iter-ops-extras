@@ -16,6 +16,7 @@
 * [distinctValues](./src/distinct-values.ts) - selects unique key-values, then remaps into just values.
 * [flat/flatMap](./src/flat.ts) - replacement for default ones, to replicate Array's methods.
 * [group](./src/group.ts) - groups objects by a property value.
+* [interval](./src/interval.ts) - the same as [delay], but without delaying the first value.
 * [join](./src/join.ts) - joins strings, with optional separator.
 * [mapWait](./src/map-wait.ts) - remaps and sequentially awaits promises.
 * [max](./src/max.ts) - emits maximum value, with optional key selector.
@@ -48,6 +49,8 @@ See also [Custom Operators](https://github.com/vitaly-t/iter-ops/wiki/Custom-Ope
 operators.
 
 :bulb: **TIP:** Operators [consume] and [concurrencyFork] are useful helpers for custom operators.
+
+[delay]:https://vitaly-t.github.io/iter-ops/functions/delay.html
 
 [consume]:https://vitaly-t.github.io/iter-ops/functions/consume
 
