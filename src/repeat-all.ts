@@ -3,7 +3,7 @@ import {IterationState, Operation, repeat, spread, toArray} from 'iter-ops';
 /**
  * Repeats the entire iterable N times.
  *
- * It also supports a callback - see operator "repeat": https://vitaly-t.github.io/iter-ops/functions/repeat
+ * It also supports a callback - see operator `repeat`: https://vitaly-t.github.io/iter-ops/functions/repeat
  *
  * LIMITATIONS:
  *

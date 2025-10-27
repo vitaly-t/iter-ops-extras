@@ -2,7 +2,7 @@ import {filter, Operation} from 'iter-ops';
 
 /**
  * All primitive types that exist in JavaScript,
- * plus synthetic support for `null` as type.
+ * plus synthetic support for `null` as a type.
  */
 type PrimitiveMap = {
     bigint: bigint;

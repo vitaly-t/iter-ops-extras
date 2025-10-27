@@ -1,13 +1,13 @@
 import {Operation, reduce} from 'iter-ops';
 
+/**
+ * Emits maximum value, with optional key-selector.
+ *
+ * See also: operator `numberStats` that supersedes it.
+ */
 export function max<T>(): Operation<T, T>;
 export function max<T, R>(keySelector?: (value: T) => R): Operation<T, R>;
 
-/**
- * Emits maximum value, with optional key selector.
- *
- * See also - operator `numberStats`, as alternative.
- */
 export function max<T, R>(keySelector?: (value: T) => R): Operation<T, T | R> {
     const hasSelector = typeof keySelector === 'function';
     const cb = hasSelector ? (p: any, c: T, idx: number) => {

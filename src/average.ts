@@ -1,13 +1,13 @@
 import {IterationState, Operation, reduce} from 'iter-ops';
 
+/**
+ * Emits an average value, with optional key-selector.
+ *
+ * See also: operator `numberStats` that supersedes it.
+ */
 export function average<T>(): Operation<T, T>;
 export function average<T, R>(keySelector: (value: T) => R): Operation<T, R>;
 
-/**
- * Emits an average value, with optional key selector.
- *
- * See also - operator `numberStats`, as alternative.
- */
 export function average<T, R>(keySelector?: (value: T) => R): Operation<T, T | R> {
     let cb;
     if (typeof keySelector === 'function') {

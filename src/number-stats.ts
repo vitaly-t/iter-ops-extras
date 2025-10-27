@@ -14,22 +14,22 @@ export type NumberStatsResult<T> = {
     count: T // count
 };
 
+/**
+ * Emits basic `number` statistics - `{min, max, avg, sum, count}`, with an optional key-selector.
+ */
 export function numberStats(): Operation<number, NumberStatsResult<number>>;
 export function numberStats<T>(keySelector: (value: T) => number): Operation<T, NumberStatsResult<number>>;
 
-/**
- * Emits basic `number` statistics `{min, max, avg, sum, count}`, with optional key selector.
- */
 export function numberStats<T>(keySelector?: (value: T) => number): Operation<number, NumberStatsResult<number>> {
     return buildStats(keySelector, true);
 }
 
+/**
+ * Emits basic `bigint` statistics - `{min, max, avg, sum, count}`, with an optional key selector.
+ */
 export function bigIntStats(): Operation<bigint, NumberStatsResult<bigint>>;
 export function bigIntStats<T>(keySelector: (value: T) => bigint): Operation<T, NumberStatsResult<bigint>>;
 
-/**
- * Emits basic `bigint` statistics `{min, max, avg, sum, count}`, with optional key selector.
- */
 export function bigIntStats<T>(keySelector?: (value: T) => bigint): Operation<bigint, NumberStatsResult<bigint>> {
     return buildStats(keySelector, false);
 }

@@ -1,13 +1,13 @@
 import {Operation, reduce} from 'iter-ops';
 
+/**
+ * Emits minimum value, with optional key-selector.
+ *
+ * See also: operator `numberStats` that supersedes it.
+ */
 export function min<T>(): Operation<T, T>;
 export function min<T, R>(keySelector?: (value: T) => R): Operation<T, R>;
 
-/**
- * Emits minimum value, with optional key selector.
- *
- * See also - operator `numberStats`, as alternative.
- */
 export function min<T, R>(keySelector?: (value: T) => R): Operation<T, T | R> {
     const hasSelector = typeof keySelector === 'function';
     const cb = hasSelector ? (p: any, c: T, idx: number) => {

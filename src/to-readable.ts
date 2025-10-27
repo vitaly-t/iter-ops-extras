@@ -15,7 +15,7 @@ import {Readable} from 'stream';
  * ```
  *
  * NOTE: This operator is not included within ./index.ts by default,
- *       because "stream" package that it uses is part of NodeJS,
+ *       because the `stream` package that it uses is part of NodeJS,
  *       but for web clients it needs to be installed:
  *
  * ```

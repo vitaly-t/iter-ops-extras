@@ -1,11 +1,13 @@
 import {Operation, reduce} from 'iter-ops';
 
+/**
+ * Sums up values, with optional key-selector.
+ *
+ * See also: operator `numberStats` that supersedes it.
+ */
 export function sum<T>(): Operation<T, T>;
 export function sum<T, R>(keySelector: (value: T) => R): Operation<T, R>;
 
-/**
- * Sums up values, with optional key selector.
- */
 export function sum<T, R>(keySelector?: (value: T) => R): Operation<T, R> {
     const hasSelector = typeof keySelector === 'function';
     const cb = hasSelector ? (p: T, c: T, idx: number) =>

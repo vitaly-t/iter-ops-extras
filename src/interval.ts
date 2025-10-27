@@ -1,7 +1,7 @@
 import {Operation, IterationState, delay} from 'iter-ops';
 
 /**
- * The same as operator "delay", but without delaying the first value.
+ * The same as operator `delay`, but without delaying the first value.
  *
  * See also: https://vitaly-t.github.io/iter-ops/functions/delay.html
  */
